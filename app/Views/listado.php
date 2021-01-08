@@ -11,6 +11,18 @@
     <title>CRUD Pokemon!</title>
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png" width="30" height="30" alt="">
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <a class="nav-link"><?php echo session('usuario')?></a>
+            </ul>
+
+            <a href="<?php echo base_url('/salir')?>"><button class="btn btn-outline-danger my-2 my-sm-0">Salir</button></a>
+
+        </div>
+    </nav>
 
     <div class="container">
         <h1>CRUD Pokemon</h1>
@@ -18,9 +30,9 @@
             <div class="col-sm-12">
                 <form method="POST" action="<?php echo base_url().'/crear' ?>">
                     <label for="mote">Mote</label>
-                    <input type="text" name="mote" id="mote" class="form-control">
+                    <input type="text" name="mote" id="mote" class="form-control" required="">
                     <label for="nivel">Nivel</label>
-                    <input type="number" name="nivel" id="nivel" class="form-control">
+                    <input type="number" name="nivel" id="nivel" class="form-control" required="">
                     <br>
                     <button class="btn btn-primary">Guardar</button>
                 </form>
@@ -41,14 +53,14 @@
                         </tr>
                         <?php foreach($datos as $key): ?>
                             <tr>
-                                <td><?php echo $key->pokemones_id_pkey ?></td>
+                                <td><?php echo $key->id ?></td>
                                 <td><?php echo $key->mote ?></td>
                                 <td><?php echo $key->nivel ?></td>
                                 <td>
-                                    <a href="<?php echo base_url().'/obtenerPokemon/$key->pokemones_id_pkey' ?>" class="btn btn-warning btn-sm">Editar</a>
+                                    <a href="<?php echo base_url().'/obtenerPokemon/'.$key->id ?>" class="btn btn-warning btn-sm">Editar</a>
                                 </td>
                                 <td>
-                                    <a href="" class="btn btn-danger btn-sm">Eliminar</a>
+                                    <a href="<?php echo base_url().'/eliminar/'.$key->id ?>" class="btn btn-danger btn-sm">Eliminar</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -64,5 +76,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script type="text/javascript">
+        let mensaje = '<?php echo $mensaje ?>';
+
+        if(mensaje == '1')
+        {
+            swal(':D','Agregado con exito','success');
+        }
+        else if(mensaje == '0')
+        {
+            swal(':P','Error al agregar','error');
+        }
+        else if(mensaje == '2')
+        {
+            swal(':D','Actualizado con exito','success');
+        }
+        else if(mensaje == '3')
+        {
+            swal(':P','Error al actualizar','error');
+        }
+        else if(mensaje == '4')
+        {
+            swal(':D','Eliminado con exito','success');
+        }
+        else if(mensaje == '5')
+        {
+            swal(':P','Error al eliminar','error');
+        }
+    </script>
   </body>
 </html>
