@@ -11,4 +11,12 @@
             return $Usuario->get()->getResultArray();
         }
 
+        public function insertar($datos)
+        {
+            $Usuario = $this->db->table('usuarios');
+            $Usuario->insert($datos);
+
+            return $this->db->insertID();
+        }
+
     }

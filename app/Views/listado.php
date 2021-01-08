@@ -104,6 +104,10 @@
         {
             swal(':P','Error al eliminar','error');
         }
+        else if(mensaje == '9')
+        {
+            swal(':D','Bienvenido a tu PC','success');
+        }
     </script>
   </body>
 </html>
