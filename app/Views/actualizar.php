@@ -1,3 +1,12 @@
+<?php
+  
+  $id = $datos[0]['id'];
+  $mote = $datos[0]['mote'];
+  $nivel = $datos[0]['nivel'];
+  $entrenador = $datos[0]['entrenador'];
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,11 +26,15 @@
         <div class="row">
             <div class="col-sm-12">
                 <form method="POST" action="<?php echo base_url().'/actualizar' ?>">
-                    <input type="text" id="idMote" name="idMote" hidden="">
+
+                    <input type="text" id="id" name="id" hidden="" value="<?php echo $id ?>">
+
                     <label for="mote">Mote</label>
-                    <input type="text" name="mote" id="mote" class="form-control">
+                    <input type="text" name="mote" id="mote" class="form-control" required="" value="<?php echo $mote ?>">
+
                     <label for="nivel">Nivel</label>
-                    <input type="number" name="nivel" id="nivel" class="form-control">
+                    <input type="number" name="nivel" id="nivel" class="form-control" required="" value="<?php echo $nivel ?>">
+
                     <br>
                     <button class="btn btn-warning">Guardar</button>
                 </form>

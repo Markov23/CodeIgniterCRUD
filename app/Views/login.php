@@ -12,6 +12,25 @@
   </head>
   <body>
 
+    <div class="container">
+      
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <h1>Login Pokemon</h1>
+          <form action="<?php echo base_url('/login') ?>" method="POST">
+            <label for="usuario">Correo</label>
+            <input type="text" name="usuario" required="" class="form-control">
+            <label for="password">Password</label>
+            <input type="password" name="password" required="" class="form-control">
+            <br>
+            <button class="btn btn-primary">Iniciar sesión</button>
+          </form>
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

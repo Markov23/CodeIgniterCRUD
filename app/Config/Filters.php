@@ -10,6 +10,7 @@ class Filters extends BaseConfig
 		'csrf'     => \CodeIgniter\Filters\CSRF::class,
 		'toolbar'  => \CodeIgniter\Filters\DebugToolbar::class,
 		'honeypot' => \CodeIgniter\Filters\Honeypot::class,
+		'SessionAdmin' => \App\Filters\SessionAdmin::class
 	];
 
 	// Always applied before every request
@@ -32,5 +33,15 @@ class Filters extends BaseConfig
 	// List filter aliases and any before/after uri patterns
 	// that they should run on, like:
 	//    'isLoggedIn' => ['before' => ['account/*', 'profiles/*']],
-	public $filters = [];
+	public $filters = [
+		"SessionAdmin" => [
+			"before" => [
+				"/crud",
+				"/obtenerPokemon/(:any)",
+				"/eliminar/(:any)",
+				"/crear",
+				"/actualizar"
+			]
+		]
+	];
 }

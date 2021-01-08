@@ -31,6 +31,9 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Login::index');
+$routes->post('/login', 'Login::login');
+$routes->get('/salir', 'Login::salir');
+$routes->get('/crud', 'Crud::index');
 $routes->get('/obtenerPokemon/(:any)','Crud::obtenerPokemon/$1');
 $routes->get('/eliminar/(:any)','Crud::eliminar/$1');
 $routes->post('/crear','Crud::crear');
