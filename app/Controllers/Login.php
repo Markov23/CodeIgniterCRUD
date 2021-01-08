@@ -33,11 +33,11 @@ class Login extends BaseController
 			];
 			$session = session();
 			$session->set($data);
-			return redirect()->to(base_url('/crud'))->with('mensaje','1');
+			return redirect()->to(base_url('/crud'))->with('mensaje','7');
 		}
 		else
 		{
-			return redirect()->to(base_url('/'))->with('mensaje','0');
+			return redirect()->to(base_url('/'))->with('mensaje','6');
 		}
 	}
 
