@@ -7,11 +7,27 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://localhost/CodeIgniterCRUD/styles/listado.css">
 
     <title>Registrate</title>
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="nav">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png" width="30"
+                height="30" alt="">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <a class="nav-link">
+                        <?php echo session('usuario')?>
+                    </a>
+                </ul>
 
+                <a href="<?php echo base_url('/salir')?>"><button class="btn btn-danger btn-sm">Salir</button></a>
+
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <h1>Registrate</h1>
         <div class="row">
@@ -19,12 +35,16 @@
                 <form method="POST" action="<?php echo base_url().'/registrar' ?>">
                     <label for="nombre">Nombre</label>
                     <input type="text" name="nombre" id="nombre" class="form-control" required="">
+                    <br>
                     <label for="region">Region</label>
                     <input type="text" name="region" id="region" class="form-control" required="">
+                    <br>
                     <label for="correo">Correo</label>
                     <input type="text" name="correo" id="correo" class="form-control" required="">
+                    <br>
                     <label for="contrasena">Password</label>
                     <input type="password" name="contrasena" id="contrasena" class="form-control" required="">
+                    <br>
                     <br>
                     <button class="btn btn-primary">Registrar</button>
                 </form>

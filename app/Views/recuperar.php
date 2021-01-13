@@ -7,11 +7,27 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://localhost/CodeIgniterCRUD/styles/listado.css">
 
     <title>Recuperar</title>
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="nav">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png" width="30"
+                height="30" alt="">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <a class="nav-link">
+                        <?php echo session('usuario')?>
+                    </a>
+                </ul>
 
+                <a href="<?php echo base_url('/salir')?>"><button class="btn btn-danger btn-sm">Salir</button></a>
+
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <h1>Recuperar</h1>
         <div class="row">
