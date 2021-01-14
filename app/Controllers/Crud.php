@@ -2,6 +2,8 @@
 
 	use App\Models\CrudModel;
 
+	use \Mpdf\Mpdf;
+
 class Crud extends BaseController
 {
 	public function index()
@@ -92,6 +94,49 @@ class Crud extends BaseController
 		{
 			return redirect()->to(base_url().'/crud')->with('mensaje','5');
 		}
+	}
+
+	function reporte(){
+		$mpdf = new \Mpdf\Mpdf;
+		$connect = mysqli_connect("localhost", "root", "", "registro-pokemon");
+		$query ="SELECT * FROM pokemon";
+		$result = $connect->query($query);
+		$html= '<!DOCTYPE html>
+		<html lang="en">
+		  <head>
+			<meta charset="utf-8">
+			<link rel="stylesheet" href="http://localhost/CodeIgniterCRUD/css/style.css" media="all" />
+		  </head>
+		  <body>
+			<header class="clearfix">
+			  <h1>Reporte de Pokemon Registrados</h1>
+			</header>
+			<main>
+			  <table>
+				<thead>
+				  <tr>
+					<th class="service">ID</th>
+					<th class="desc">NOMBRE</th>
+					<th>NIVEL</th>					
+				  </tr>
+				</thead>
+				<tbody>';
+		while($fila = $result->fetch_assoc()){
+			$html .='<tr>
+					<td class="service">'.$fila['id'].'</td>
+					<td class="desc">'.$fila['mote'].'</td>
+					<td class="unit">'.$fila['nivel'].'</td>					
+				  </tr>
+				';
+		
+		}
+		$html .='</tbody>
+		</table>		
+	  </main>
+	  </body>
+		</html>';
+		$mpdf->WriteHTML($html);
+		return redirect()->to($mpdf->Output('archivo.pdf','I'));
 	}
 
 	//--------------------------------------------------------------------

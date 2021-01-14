@@ -48,6 +48,8 @@
             </div>
         </div>
         <hr>
+        <a href="<?php echo base_url().'/reporte' ?>" class="btn btn-submit btn-success">Ver documento PDF</a>
+        <hr>
         <h2>Listado de pokemones</h2>
         <div class="row">
             <div class="col-sm-12">
@@ -85,6 +87,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
 
     <!-- Optional JavaScript -->

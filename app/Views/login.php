@@ -29,7 +29,16 @@
                 <input type="password" name="password" required="" class="form-control">
                 <br>
                 <button class="btn btn-primary">Iniciar sesión</button>
+                
               </form>
+              <div style="padding-top:10px;">
+                <a href="<?php echo base_url().'/registro' ?>" class="btn btn-warning">Registrarse</a>
+              </div>
+              <div style="padding-top:10px;">
+                <a href="<?php echo base_url().'/recuperar' ?>">¿Olvidaste tu contraseña?</a>
+              </div>
+              
+                
             </div>
             <div class="col"></div>
           </div>

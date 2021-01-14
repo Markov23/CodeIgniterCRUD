@@ -42,6 +42,7 @@ $routes->get('/obtenerPokemon/(:any)','Crud::obtenerPokemon/$1');
 $routes->get('/eliminar/(:any)','Crud::eliminar/$1');
 $routes->post('/crear','Crud::crear');
 $routes->post('/actualizar','Crud::actualizar');
+$routes->get('/reporte','Crud::reporte');
 
 /**
  * --------------------------------------------------------------------
