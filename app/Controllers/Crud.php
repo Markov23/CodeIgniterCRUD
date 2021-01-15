@@ -96,10 +96,10 @@ class Crud extends BaseController
 		}
 	}
 
-	function reporte(){
+	function reporte($nombre){
 		$mpdf = new \Mpdf\Mpdf;
 		$connect = mysqli_connect("localhost", "root", "", "registro-pokemon");
-		$query ="SELECT * FROM pokemon";
+		$query ="SELECT * FROM pokemon JOIN usuarios ON pokemon.entrenador = usuarios.id WHERE nombre ='".$nombre."'";
 		$result = $connect->query($query);
 		$html= '<!DOCTYPE html>
 		<html lang="en">

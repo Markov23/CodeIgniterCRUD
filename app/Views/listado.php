@@ -48,7 +48,7 @@
             </div>
         </div>
         <hr>
-        <a href="<?php echo base_url().'/reporte' ?>" class="btn btn-submit btn-success">Ver documento PDF</a>
+        <a href="<?php echo base_url().'/reporte/'.session('usuario') ?>" class="btn btn-submit btn-success">Ver documento PDF</a>
         <hr>
         <h2>Listado de pokemones</h2>
         <div class="row">
